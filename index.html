@@ -2,12 +2,7 @@
 <html>
 <body>
 
-<p>Image to use:</p>
-<div>
-<img src="img01.jpg" id="sch" width="1280" height="800" alt="Screenshot">
-</div>
-
-<button onclick="myFunction()">Click me</button>
+<button onclick="moverImgX()">Bajar</button>
 
 <p>Canvas:</p>
 <canvas id="myCanvas" width="1300" height="900" style="border:1px solid #d3d3d3;">
@@ -15,12 +10,22 @@ Your browser does not support the HTML5 canvas tag.
 </canvas>
 
 <script>
-window.onload = function() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    var img = document.getElementById("sch");
-    ctx.drawImage(img, 50, 10);
+var img=document.createElement('img');
+img.src='screenshot.jpg';
+
+function cargarImg() {
+var c=document.getElementById('myCanvas');
+var ctx=c.getContext('2d');
+var imgX=10;
+var imgY=10;
+ctx.drawImage(img,moverImgX(10),imgY);
 }
+
+function moverImgX(10){
+	imgX += 50;
+	return imgX;
+}
+
 
 </script>
 
